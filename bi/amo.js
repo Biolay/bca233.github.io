@@ -12,7 +12,7 @@ function 测试() { alert('都叫你别点这里了。')}
 //人机验证
 function RJ储存() {let blend = prompt('请问您是人类吗？');
 if (blend = 是) { localStorage.setItem('name',blend);
-  
+  console.log(blend)
 } else { RJ储存();
   
 }
