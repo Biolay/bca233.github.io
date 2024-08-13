@@ -11,7 +11,7 @@ myImage.onclick = function() {
 function 测试() { alert('都叫你别点这里了。')}
 //人机验证
 function RJ储存 () { blend=prompt('请问您是人类吗？');
-if (blend===人类) { localStorage.setItem('name',blend)
+if (blend===是) { localStorage.setItem('name',blend);
   
 } else { RJ储存();alert('机器人，鬼出去！')
   
