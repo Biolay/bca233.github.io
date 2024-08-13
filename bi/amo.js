@@ -18,6 +18,6 @@ if (blend===是) { localStorage.setItem('name',blend);
 }
 }
 //初次构造
-if (localStorage.getItem('name')) {
+if (!localStorage.getItem('name')) {
   RJ储存();
                       }
