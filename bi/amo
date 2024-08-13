@@ -1,5 +1,4 @@
 let myImage = document.querySelector("img");
-
 myImage.onclick = function () {
 让mySrc=myImage. getAttribute(“Src”)；
 if (mySrc === "https://s21.ax1x.com/2024/08/13/pApyKeg.jpg") {
