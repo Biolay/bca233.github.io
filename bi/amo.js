@@ -8,6 +8,7 @@ myImage.onclick = function() {
     myImage.setAttribute ('src','https://s21.ax1x.com/2024/08/13/pApyKeg.jpg');
   }
 };
+
 function 测试() { alert('都叫你别点这里了。')}
 
 //人机验证
