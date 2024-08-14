@@ -14,7 +14,8 @@ function 测试() { alert('都叫你别点这里了。')}
 //人机验证
 function RJ储存() {
     let blend;
-    // 使用 while 循环
+    const audio = new Audio('nb1.mp3');
+    // 创建音频+执行对象
     while (true) {
         blend = prompt('请问您是人类吗？');
         
@@ -23,7 +24,8 @@ function RJ储存() {
             console.log(blend);
             break; // 输入正确，退出循环
         } else {
-            alert('人机，乐子人滚出去！'); // 提示用户重新输入
+            alert('人机，乐子人滚出去！');
+          audio.play();// 提示用户重新输入
         }
     }
 }
