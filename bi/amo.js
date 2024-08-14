@@ -9,17 +9,7 @@ myImage.onclick = function() {
   }
 };
 function 测试() { alert('都叫你别点这里了。')}
-//人机验证
-function RJ储存() {
-    let blend = prompt('请问您是人类吗？');
-    // 检查用户输入是否等于“是”
-    if (blend !== '是') {
-        RJ储存(); // 如果不是“是”，递归调用
-    } else {
-        localStorage.setItem('name', blend);
-        console.log(blend);
-    }
-}
+
 //人机验证
 function RJ储存() {
     let blend;
