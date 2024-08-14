@@ -22,7 +22,7 @@ function RJ储存() {
             console.log(blend);
             break; // 输入正确，退出循环
         } else {
-            alert('请重新输入“是”。'); // 提示用户重新输入
+            alert('人机，乐子人滚出去！'); // 提示用户重新输入
         }
     }
 }
