@@ -9,7 +9,7 @@ myImage.onclick = function() {
   }
 };
 
-function 测试() { alert('都叫你别点这里了。')}
+function 测试() { alert('此消息已被站长删除。')}
 
 //人机验证
 function RJ储存() {
