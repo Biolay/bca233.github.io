@@ -44,7 +44,21 @@
   
   function notify(title,msg,options){
     let Notification = window.Notification || window.webkitNotifications
+    if(!("Notification" in window)) {
+    alert("不支持");
+        return;
+    }
     
+    
+    if (Notification.permission === 'granted')
+    {showNotification(title, msg);}else {Notification.requestPermission((permission)=>{
+      if (permission === 'granted') {
+        showNotification(title, msg);
+      else alert("请允许通知权限以接收消息");
+      }
+    })}
+  }
+
     new Notification('通知',{
       dir:'ltr',
       tag: new Date().getTime(),
@@ -52,13 +66,6 @@
       body:'meeeeeeeeeee',
       
     })
-    
-    if (Notification.permission === 'granted')
-    {}else {Notification.requestPermission((permission)=>{
-      if (permission === 'granted') {
-      }
-    })}
-  }
   
   function xiaoxi() {
     notify ('你成功了:','meeeeeeeee!!!!',{});
