@@ -53,8 +53,8 @@
     if (Notification.permission === 'granted')
     {showNotification(title, msg);}else {Notification.requestPermission((permission)=>{
       if (permission === 'granted') {
-        showNotification(title, msg);
-      else alert("请允许通知权限以接收消息");
+        showNotification(title, msg);}
+      else {alert("请允许通知权限以接收消息");}
       }
     })}
   }
