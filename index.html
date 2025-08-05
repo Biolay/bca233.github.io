@@ -36,40 +36,32 @@
   <button type="submit" style="margin-left: 100px;width: 100px;height: 50px;background-color: red" onclick="xiaoxi()"><p style="color: white">消息通知</p></button>
   
   <script>
-  /*
-    @param {String} title
+@param {String} title
     @param {String} msg
     @param {Object} [Options]
     @returns {Notification}*/
   
   function notify(title,msg,options){
     let Notification = window.Notification || window.webkitNotifications
-    if(!("Notification" in window)) {
-    alert("不支持");
-        return;
-    }
     
-    
-    if (Notification.permission === 'granted')
-    {}else {Notification.requestPermission((permission)=>{
-      if (permission === 'granted') {
-        
-       alert("请允许通知权限以接收消息");
-      
-    }})}
-  }
-
     new Notification('通知',{
       dir:'ltr',
       tag: new Date().getTime(),
       icon:'',
       body:'meeeeeeeeeee',
-      
+      requireInteraction: true
     })
+    
+    if (Notification.permission === 'granted')
+    {alert("正常执行")}else {Notification.requestPermission((permission)=>{
+      if (permission === 'granted') {
+      }
+    })}
+  }
   
   function xiaoxi() {
     notify ('你成功了:','meeeeeeeee!!!!',{});
-  }
+  }    
   </script>
   </body>
 </html>
