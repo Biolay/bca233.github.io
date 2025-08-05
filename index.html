@@ -36,30 +36,26 @@
   <button type="submit" style="margin-left: 100px;width: 100px;height: 50px;background-color: red" onclick="xiaoxi()"><p style="color: white">消息通知</p></button>
   
   <script>
-  /*@param {String} title
-    @param {String} msg
-    @param {Object} [Options]
-    @returns {Notification}*/
-  
-  function notify(title,msg,options){
-    let Notification = window.Notification || window.webkitNotifications
-  
-    if (Notification.permission === 'granted')
-    {alert("正常执行")}else {Notification.requestPermission((permission)=>{
-      if (permission === 'granted') {
-      }
-    })}
-  
-    new Notification('通知',{
-      dir:'ltr',
-      tag: new Date().getTime(),
-      icon:'',
-      body: msg,
-    })}
-  
-  function xiaoxi() {
-    notify ('你成功了:','meeeeeeeee!!!!',{});
-  }    
+  navigator.serviceWorker.register("sw.js");
+
+// 定义显示通知的函数
+function showNotification() {
+  // 请求用户授权显示通知
+  Notification.requestPermission().then((result) => {
+    // 如果用户授权允许通知
+    if (result === "granted") {
+      // 等待 Service Worker 准备就绪
+      navigator.serviceWorker.ready.then((registration) => {
+        // 通过 Service Worker 显示通知
+        registration.showNotification("成功啦！！！！", {
+          body: "meeeeeeeeee!!!!!!!!!!!",            // 通知正文内容
+          icon: "../images/touch/chrome-touch-icon-192x192.png", // 通知图标
+          tag: "vibration-sample",        // 通知分组标识
+        });
+      });
+    }
+  });
+}
   </script>
   </body>
 </html>
